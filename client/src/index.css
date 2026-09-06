@@ -503,3 +503,4122 @@ img {
     font-size: 13px;
   }
 }
+/* =========================================================
+   SkillBridge - Application Styles
+   PART 1
+   Global + Navbar + Home + Shared Sections + Footer
+   ========================================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   Shared Navbar
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e7e9f0;
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.navbar-brand,
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #111936;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 8px 0;
+  color: #596176;
+  font-size: 0.94rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #4f46e5;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4f46e5;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  padding: 11px 18px;
+  border-radius: 9px;
+  background: #111936;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #292f52;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(17, 25, 54, 0.14);
+}
+
+.mobile-menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e0e3eb;
+  border-radius: 9px;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 9px;
+}
+
+.mobile-menu-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #111936;
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+.primary-button,
+.secondary-button,
+.cta-light-button,
+.cta-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 21px;
+  border-radius: 9px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primary-button {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.18);
+}
+
+.primary-button:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.24);
+}
+
+.secondary-button {
+  border: 1px solid #d9dce6;
+  background: #ffffff;
+  color: #202742;
+}
+
+.secondary-button:hover {
+  border-color: #bfc3d2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 25, 54, 0.07);
+}
+
+/* =========================================================
+   Home - Hero
+   ========================================================= */
+
+.home-page {
+  overflow: hidden;
+}
+
+.hero-section {
+  position: relative;
+  background: #f8f9fc;
+  border-bottom: 1px solid #e8eaf1;
+}
+
+.hero-container {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 610px;
+  margin: 0 auto;
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #4f46e5;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: #111936;
+  font-size: clamp(3rem, 5vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: #4f46e5;
+}
+
+.hero-content > p {
+  max-width: 600px;
+  margin: 27px 0 0;
+  color: #626b80;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 34px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: #747c8d;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4f46e5;
+}
+
+/* =========================================================
+   Hero Visual
+   ========================================================= */
+
+.hero-visual {
+  position: relative;
+  min-height: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-card {
+  position: relative;
+  width: min(440px, 100%);
+  padding: 29px;
+  border: 1px solid #e0e3ed;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 24px 65px rgba(17, 25, 54, 0.1);
+  z-index: 2;
+}
+
+.visual-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.visual-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #111936;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.visual-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #858c9e;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.visual-card-top strong {
+  display: block;
+  color: #202742;
+  font-size: 0.98rem;
+}
+
+.connection-line {
+  display: flex;
+  align-items: center;
+  margin: 45px 0;
+}
+
+.connection-node {
+  min-width: 92px;
+  padding: 13px 8px;
+  border: 1px solid #dfe2eb;
+  border-radius: 9px;
+  background: #fafbfc;
+  color: #30384f;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.provider-node {
+  border-color: #c9c8f5;
+  background: #f5f4ff;
+  color: #4f46e5;
+}
+
+.connection-path {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.connection-path span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a5a9b9;
+}
+
+.visual-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid #eceef3;
+  color: #777f91;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border: 1px solid #e0e3eb;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(17, 25, 54, 0.09);
+  z-index: 3;
+}
+
+.floating-card strong,
+.floating-card small {
+  display: block;
+}
+
+.floating-card strong {
+  color: #252c43;
+  font-size: 0.72rem;
+}
+
+.floating-card small {
+  margin-top: 3px;
+  color: #858c9c;
+  font-size: 0.63rem;
+}
+
+.floating-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #eef0ff;
+  color: #4f46e5;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.floating-card-one {
+  top: 52px;
+  right: -5px;
+}
+
+.floating-card-two {
+  bottom: 48px;
+  left: -18px;
+}
+
+/* =========================================================
+   Shared Sections
+   ========================================================= */
+
+.section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 105px 0;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 50px;
+}
+
+.section-heading h2,
+.why-content h2,
+.cta-content h2 {
+  margin: 0;
+  color: #111936;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p {
+  max-width: 610px;
+  margin: 17px 0 0;
+  color: #697184;
+  line-height: 1.75;
+}
+
+.section-heading-row {
+  max-width: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.text-link {
+  flex-shrink: 0;
+  margin-bottom: 8px;
+  color: #4f46e5;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.text-link:hover {
+  color: #3730a3;
+}
+
+/* =========================================================
+   How It Works
+   ========================================================= */
+
+.how-section {
+  border-bottom: 1px solid #eceef3;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.step-card {
+  position: relative;
+  padding: 30px;
+  border: 1px solid #e5e7ee;
+  border-radius: 13px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: #d8d7f5;
+  box-shadow: 0 16px 35px rgba(17, 25, 54, 0.07);
+}
+
+.step-number {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #b5b9c5;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f0efff;
+  color: #4f46e5;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+  color: #202742;
+  font-size: 1.05rem;
+}
+
+.step-card p {
+  margin: 0;
+  color: #737b8c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   Categories
+   ========================================================= */
+
+.categories-section {
+  background: #ffffff;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  padding: 25px;
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: #d5d3f6;
+  box-shadow: 0 14px 30px rgba(17, 25, 54, 0.07);
+}
+
+.category-icon {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f0efff;
+  color: #4f46e5;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.category-card h3 {
+  margin: 0;
+  color: #202742;
+  font-size: 0.98rem;
+}
+
+.category-card p {
+  min-height: 48px;
+  margin: 10px 0 20px;
+  color: #747c8e;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.category-link {
+  color: #4f46e5;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.category-link span {
+  margin-left: 4px;
+  transition: margin-left 0.2s ease;
+}
+
+.category-card:hover .category-link span {
+  margin-left: 8px;
+}
+
+/* =========================================================
+   Why SkillBridge
+   ========================================================= */
+
+.why-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+  background: #f8f9fc;
+  border-top: 1px solid #eceef3;
+  border-bottom: 1px solid #eceef3;
+}
+
+.why-content p {
+  max-width: 500px;
+  margin: 20px 0 28px;
+  color: #6d7588;
+  line-height: 1.75;
+}
+
+.benefits-list {
+  display: grid;
+  gap: 25px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 17px;
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid #dedff0;
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+.benefit-item h3 {
+  margin: 0 0 5px;
+  color: #252c43;
+  font-size: 0.95rem;
+}
+
+.benefit-item p {
+  margin: 0;
+  color: #737b8d;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 95px 40px;
+}
+
+.cta-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 70px 45px;
+  border-radius: 18px;
+  background: #111936;
+  text-align: center;
+}
+
+.cta-content .eyebrow {
+  color: #a9a7ff;
+}
+
+.cta-content h2 {
+  color: #ffffff;
+}
+
+.cta-content > p {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: #b9bed0;
+  line-height: 1.7;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cta-light-button {
+  background: #ffffff;
+  color: #111936;
+}
+
+.cta-light-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
+}
+
+.cta-outline-button {
+  border: 1px solid #4e5675;
+  color: #ffffff;
+}
+
+.cta-outline-button:hover {
+  border-color: #7a81a0;
+  background: #1a2242;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer {
+  background: #0d132a;
+  color: #ffffff;
+}
+
+.footer-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 65px 0 55px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 70px;
+}
+
+.footer-logo {
+  color: #ffffff;
+}
+
+.footer-brand > p {
+  max-width: 390px;
+  margin: 18px 0 0;
+  color: #9da4b9;
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-column h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.footer-column a,
+.footer-column span {
+  color: #9299ae;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #252c45;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #777f96;
+  font-size: 0.72rem;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 70px 0;
+  }
+
+  .hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .hero-note {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: min(560px, 100%);
+    margin: 0 auto;
+  }
+
+  .why-section {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .why-content {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    width: min(100% - 28px, 1180px);
+    min-height: 68px;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 68px;
+    left: 14px;
+    right: 14px;
+    display: none;
+    padding: 18px;
+    border: 1px solid #e3e5ed;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(17, 25, 54, 0.1);
+  }
+
+  .navbar-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .nav-link {
+    padding: 11px 8px;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-cta {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .hero-container,
+  .section {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .hero-content > p {
+    font-size: 0.96rem;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .steps-grid,
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card p {
+    min-height: auto;
+  }
+
+  .floating-card-one {
+    right: -5px;
+  }
+
+  .floating-card-two {
+    left: -5px;
+  }
+
+  .main-card {
+    padding: 22px;
+  }
+
+  .footer-container {
+    width: min(100% - 28px, 1180px);
+    grid-template-columns: 1fr 1fr;
+    gap: 45px 25px;
+    padding: 50px 0 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    width: min(100% - 28px, 1180px);
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .cta-section {
+    width: min(100% - 28px, 1180px);
+    padding: 65px 0;
+  }
+
+  .cta-content {
+    padding: 55px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 330px;
+  }
+
+  .floating-card {
+    padding: 9px;
+  }
+
+  .floating-card strong {
+    font-size: 0.65rem;
+  }
+
+  .floating-card small {
+    font-size: 0.57rem;
+  }
+
+  .floating-card-one {
+    top: 25px;
+    right: -3px;
+  }
+
+  .floating-card-two {
+    bottom: 20px;
+    left: -3px;
+  }
+
+  .connection-line {
+    margin: 32px 0;
+  }
+
+  .connection-node {
+    min-width: 75px;
+    font-size: 0.65rem;
+  }
+
+  .visual-footer {
+    font-size: 0.63rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .cta-light-button,
+  .cta-outline-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   PART 2 — DASHBOARD DESIGN POLISH
+   Add below Part 1 in src/index.css
+========================================================= */
+
+
+/* ================================
+   CUSTOMER DASHBOARD
+================================ */
+
+.customer-dashboard {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(109, 40, 217, 0.07),
+      transparent 30%
+    ),
+    var(--sb-page);
+}
+
+.customer-dashboard-container {
+  width: min(1180px, 100%);
+}
+
+.customer-dashboard-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.customer-dashboard-header h1 {
+  color: var(--sb-violet);
+  letter-spacing: -0.04em;
+}
+
+.customer-dashboard-header p {
+  color: var(--sb-muted);
+}
+
+
+/* Dashboard primary actions */
+
+.dashboard-services-button,
+.dashboard-primary-button {
+  border: 1px solid transparent;
+  background: linear-gradient(
+    135deg,
+    var(--sb-purple),
+    var(--sb-plum)
+  );
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(109, 40, 217, 0.16);
+}
+
+.dashboard-services-button:hover,
+.dashboard-primary-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #5b21b6,
+    #701a4d
+  );
+  box-shadow: 0 14px 28px rgba(109, 40, 217, 0.22);
+}
+
+
+/* Customer request cards */
+
+.customer-request-card {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: var(--sb-surface);
+  box-shadow: var(--sb-shadow);
+}
+
+.customer-request-card:hover {
+  border-color: #d8b4fe;
+  box-shadow: var(--sb-shadow-hover);
+}
+
+.customer-request-content {
+  padding: 28px;
+}
+
+.customer-request-category {
+  color: var(--sb-purple);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.customer-request-content h2 {
+  color: var(--sb-violet);
+  font-size: 1.3rem;
+}
+
+.customer-request-price {
+  color: var(--sb-plum);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* Request details */
+
+.customer-request-details {
+  gap: 14px;
+  padding-top: 20px;
+  border-top-color: var(--sb-border);
+}
+
+.customer-request-details div {
+  padding: 12px;
+  border-radius: var(--sb-radius-sm);
+  background: #fcfbff;
+}
+
+.customer-request-details span,
+.customer-request-message span {
+  color: var(--sb-muted);
+  font-weight: 700;
+}
+
+.customer-request-details strong {
+  color: var(--sb-ink);
+}
+
+
+/* Customer message */
+
+.customer-request-message {
+  border: 1px solid var(--sb-border);
+  background: #fcfbff;
+}
+
+.customer-request-message p {
+  color: #475467;
+}
+
+
+/* Customer empty state */
+
+.dashboard-empty {
+  border-color: var(--sb-border);
+  box-shadow: var(--sb-shadow);
+}
+
+.dashboard-empty-icon {
+  background: var(--sb-lavender);
+  color: var(--sb-purple);
+}
+
+.dashboard-empty h2 {
+  color: var(--sb-violet);
+}
+
+
+/* ================================
+   PROVIDER DASHBOARD
+================================ */
+
+.provider-dashboard {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(124, 45, 93, 0.06),
+      transparent 32%
+    ),
+    var(--sb-page);
+}
+
+.provider-dashboard-container {
+  width: min(1180px, 100%);
+}
+
+.provider-dashboard-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.provider-dashboard-header h1 {
+  color: var(--sb-violet);
+  letter-spacing: -0.04em;
+}
+
+.provider-dashboard-header p {
+  color: var(--sb-muted);
+}
+
+
+/* Provider services button */
+
+.provider-services-button {
+  border: 1px solid var(--sb-border);
+  background: var(--sb-surface);
+  color: var(--sb-violet);
+  box-shadow: 0 5px 14px rgba(46, 16, 101, 0.05);
+}
+
+.provider-services-button:hover {
+  background: var(--sb-lavender);
+  border-color: #c4b5fd;
+}
+
+
+/* Provider request cards */
+
+.provider-request-card {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: var(--sb-surface);
+  box-shadow: var(--sb-shadow);
+}
+
+.provider-request-card:hover {
+  border-color: #d8b4fe;
+  box-shadow: var(--sb-shadow-hover);
+}
+
+.provider-request-top {
+  padding-bottom: 20px;
+  border-bottom-color: var(--sb-border);
+}
+
+.provider-request-category {
+  color: var(--sb-purple);
+  font-weight: 800;
+}
+
+.provider-request-top h2 {
+  color: var(--sb-violet);
+}
+
+
+/* Provider service information */
+
+.provider-request-service-info {
+  padding: 20px 0;
+  border-bottom-color: var(--sb-border);
+}
+
+.provider-request-service-info div,
+.provider-customer-details div {
+  padding: 12px;
+  border-radius: var(--sb-radius-sm);
+  background: #fcfbff;
+}
+
+.provider-request-service-info span,
+.provider-customer-details span {
+  color: var(--sb-muted);
+}
+
+.provider-request-service-info strong,
+.provider-customer-details strong {
+  color: var(--sb-ink);
+}
+
+
+/* Customer information section */
+
+.provider-customer-info {
+  padding: 20px 0;
+  border-bottom-color: var(--sb-border);
+}
+
+.provider-section-label {
+  color: var(--sb-purple);
+  font-weight: 800;
+}
+
+
+/* Provider request message */
+
+.provider-request-message p {
+  border: 1px solid var(--sb-border);
+  background: #fcfbff;
+  color: #475467;
+}
+
+
+/* ================================
+   STATUS BADGES POLISH
+================================ */
+
+.request-status {
+  border: 1px solid transparent;
+}
+
+.request-status-pending {
+  background: #fff7ed;
+  color: var(--sb-warning);
+  border-color: #fed7aa;
+}
+
+.request-status-accepted,
+.request-status-approved {
+  background: #ecfdf3;
+  color: var(--sb-success);
+  border-color: #abefc6;
+}
+
+.request-status-rejected {
+  background: #fef3f2;
+  color: var(--sb-danger);
+  border-color: #fecdca;
+}
+
+
+/* ================================
+   LOADING / ERROR STATES
+================================ */
+
+.dashboard-state,
+.dashboard-error,
+.dashboard-empty {
+  border-radius: var(--sb-radius);
+}
+
+.dashboard-state {
+  background: var(--sb-surface);
+  border-color: var(--sb-border);
+}
+
+.dashboard-error {
+  background: #fef3f2;
+  border-color: #fecdca;
+}
+
+.dashboard-error h2 {
+  color: var(--sb-danger);
+}
+
+.dashboard-error p {
+  color: #7f1d1d;
+}
+
+.dashboard-loader {
+  border-color: #ddd6fe;
+  border-top-color: var(--sb-purple);
+}
+
+
+/* ================================
+   MOBILE DASHBOARD POLISH
+================================ */
+
+@media (max-width: 768px) {
+
+  .customer-dashboard-header,
+  .provider-dashboard-header {
+    padding-bottom: 22px;
+  }
+
+  .customer-request-content {
+    padding: 20px;
+  }
+
+  .provider-request-card {
+    padding: 20px;
+  }
+
+  .customer-request-details {
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .dashboard-services-button,
+  .dashboard-primary-button,
+  .provider-services-button {
+    width: 100%;
+  }
+
+  .customer-request-details div,
+  .provider-request-service-info div,
+  .provider-customer-details div {
+    padding: 10px;
+  }
+
+}
+/* =========================================================
+   PART 3 — LOGIN, ADMIN & SERVICE FORM POLISH
+   Paste below PART 2 in src/index.css
+========================================================= */
+
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.login-page {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(109, 40, 217, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(124, 45, 93, 0.06),
+      transparent 35%
+    ),
+    var(--sb-page);
+}
+
+.login-intro h1 {
+  color: var(--sb-violet);
+}
+
+.login-intro h1 span {
+  color: var(--sb-purple);
+}
+
+.login-intro > p {
+  color: var(--sb-muted);
+}
+
+.login-eyebrow {
+  color: var(--sb-purple);
+}
+
+
+/* Login Card */
+
+.login-card {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: var(--sb-surface);
+  box-shadow: var(--sb-shadow);
+}
+
+.login-card-header h2 {
+  color: var(--sb-violet);
+}
+
+.login-card-header p {
+  color: var(--sb-muted);
+}
+
+.login-brand-mark {
+  background: linear-gradient(
+    135deg,
+    var(--sb-plum),
+    var(--sb-purple)
+  );
+  box-shadow: 0 8px 18px rgba(109, 40, 217, 0.18);
+}
+
+
+/* Login Form */
+
+.login-field label {
+  color: var(--sb-ink);
+}
+
+.login-field input {
+  border-color: #d8d4df;
+  color: var(--sb-ink);
+}
+
+.login-field input::placeholder {
+  color: #98a2b3;
+}
+
+.login-field input:focus {
+  border-color: var(--sb-purple);
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+}
+
+.login-submit {
+  background: linear-gradient(
+    135deg,
+    var(--sb-purple),
+    var(--sb-plum)
+  );
+}
+
+.login-submit:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    #5b21b6,
+    #701a4d
+  );
+  box-shadow: 0 12px 26px rgba(109, 40, 217, 0.22);
+}
+
+.login-signup {
+  color: var(--sb-muted);
+}
+
+.login-signup a {
+  color: var(--sb-purple);
+}
+
+.login-signup a:hover {
+  color: var(--sb-plum);
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-dashboard {
+  min-height: calc(100vh - 76px);
+  padding: 7rem 1.5rem 4rem;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(109, 40, 217, 0.07),
+      transparent 30%
+    ),
+    var(--sb-page);
+}
+
+.admin-dashboard-container {
+  width: min(1180px, 100%);
+}
+
+.admin-dashboard-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.admin-dashboard-header h1 {
+  color: var(--sb-violet);
+  letter-spacing: -0.04em;
+}
+
+.admin-dashboard-header p {
+  color: var(--sb-muted);
+}
+
+
+/* Admin Success Message */
+
+.admin-success-message {
+  border: 1px solid #abefc6;
+  border-radius: var(--sb-radius-sm);
+  background: #ecfdf3;
+  color: var(--sb-success);
+  box-shadow: 0 8px 20px rgba(6, 118, 71, 0.06);
+}
+
+
+/* Provider Approval Grid */
+
+.admin-providers-grid {
+  gap: 20px;
+}
+
+
+/* Provider Card */
+
+.admin-provider-card {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: var(--sb-surface);
+  box-shadow: var(--sb-shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-provider-card:hover {
+  transform: translateY(-3px);
+  border-color: #d8b4fe;
+  box-shadow: var(--sb-shadow-hover);
+}
+
+
+/* Provider Avatar */
+
+.admin-provider-avatar {
+  background: linear-gradient(
+    135deg,
+    var(--sb-violet),
+    var(--sb-purple)
+  );
+  box-shadow: 0 6px 16px rgba(109, 40, 217, 0.15);
+}
+
+
+/* Provider Status */
+
+.admin-provider-status {
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: var(--sb-warning);
+}
+
+
+/* Provider Details */
+
+.admin-provider-details {
+  gap: 16px;
+}
+
+.admin-provider-details span {
+  color: var(--sb-muted);
+}
+
+.admin-provider-details h2 {
+  color: var(--sb-violet);
+}
+
+.admin-provider-details p {
+  color: #475467;
+}
+
+
+/* Approve Button */
+
+.admin-approve-button {
+  border: 1px solid #abefc6;
+  background: #ecfdf3;
+  color: var(--sb-success);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-approve-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #d1fadf;
+  box-shadow: 0 8px 18px rgba(6, 118, 71, 0.1);
+}
+
+
+/* =========================================================
+   PROVIDER CREATE SERVICE
+========================================================= */
+
+.provider-create-service {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: var(--sb-surface);
+  box-shadow: var(--sb-shadow);
+}
+
+.provider-create-service-heading {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.provider-create-service-heading h2 {
+  color: var(--sb-violet);
+}
+
+.provider-create-service-heading p {
+  color: var(--sb-muted);
+}
+
+
+/* Form Fields */
+
+.provider-service-field label {
+  color: var(--sb-ink);
+  font-weight: 700;
+}
+
+.provider-service-field input,
+.provider-service-field select,
+.provider-service-field textarea {
+  border-color: #d8d4df;
+  color: var(--sb-ink);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.provider-service-field input:hover,
+.provider-service-field select:hover,
+.provider-service-field textarea:hover {
+  border-color: #b9b1c6;
+}
+
+.provider-service-field input:focus,
+.provider-service-field select:focus,
+.provider-service-field textarea:focus {
+  border-color: var(--sb-purple);
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+}
+
+
+/* Create Service Button */
+
+.provider-create-service-button {
+  background: linear-gradient(
+    135deg,
+    var(--sb-purple),
+    var(--sb-plum)
+  );
+
+  box-shadow: 0 8px 20px rgba(109, 40, 217, 0.16);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.provider-create-service-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    #5b21b6,
+    #701a4d
+  );
+
+  box-shadow: 0 13px 28px rgba(109, 40, 217, 0.22);
+}
+
+
+/* Success & Error Messages */
+
+.provider-service-success {
+  border: 1px solid #abefc6;
+  background: #ecfdf3;
+  color: var(--sb-success);
+}
+
+.provider-service-error {
+  border: 1px solid #fecdca;
+  background: #fef3f2;
+  color: var(--sb-danger);
+}
+
+
+/* =========================================================
+   GLOBAL SMALL POLISH
+========================================================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(109, 40, 217, 0.18);
+  color: var(--sb-violet);
+}
+
+
+/* =========================================================
+   PART 3 RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .admin-dashboard {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .admin-dashboard-header {
+    padding-bottom: 22px;
+  }
+
+  .provider-create-service {
+    padding: 20px;
+  }
+
+  .login-card {
+    box-shadow: 0 10px 30px rgba(46, 16, 101, 0.08);
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .admin-approve-button,
+  .provider-create-service-button {
+    width: 100%;
+  }
+
+  .admin-provider-card {
+    padding: 20px;
+  }
+
+}
+/* =========================================================
+   PART 4 — PROVIDER REQUESTS & SHARED UI POLISH
+   Paste below PART 3 in src/index.css
+========================================================= */
+
+
+/* =========================================================
+   PROVIDER REQUESTS PAGE
+========================================================= */
+
+.provider-requests-page {
+  min-height: calc(100vh - 76px);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(109, 40, 217, 0.06),
+      transparent 30%
+    ),
+    var(--sb-page);
+}
+
+.provider-requests-container {
+  width: min(1180px, 100%);
+}
+
+
+/* Page Header */
+
+.provider-requests-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.provider-requests-header h1 {
+  color: var(--sb-violet);
+  letter-spacing: -0.04em;
+}
+
+.provider-requests-header p {
+  color: var(--sb-muted);
+}
+
+
+/* Request Summary */
+
+.provider-request-summary {
+  padding: 14px 16px;
+
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius-sm);
+
+  background: #fcfbff;
+  color: #475467;
+}
+
+
+/* =========================================================
+   PROVIDER REQUEST CARDS
+========================================================= */
+
+.provider-request-card {
+  position: relative;
+
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+
+  background: var(--sb-surface);
+
+  box-shadow: var(--sb-shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.provider-request-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #d8b4fe;
+
+  box-shadow: var(--sb-shadow-hover);
+}
+
+
+/* Request Card Footer */
+
+.provider-request-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid var(--sb-border);
+}
+
+
+/* =========================================================
+   PROVIDER REQUEST BUTTONS
+========================================================= */
+
+.provider-request-details-button,
+.provider-progress-button,
+.provider-complete-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  border-radius: var(--sb-radius-sm);
+
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* View Details */
+
+.provider-request-details-button {
+  background: #ffffff;
+
+  border: 1px solid var(--sb-border);
+
+  color: var(--sb-violet);
+}
+
+.provider-request-details-button:hover {
+  transform: translateY(-1px);
+
+  background: var(--sb-lavender);
+
+  border-color: #c4b5fd;
+
+  box-shadow: 0 7px 16px rgba(46, 16, 101, 0.08);
+}
+
+
+/* Mark In Progress */
+
+.provider-progress-button {
+  background: var(--sb-lavender);
+
+  border: 1px solid #ddd6fe;
+
+  color: var(--sb-purple);
+}
+
+.provider-progress-button:hover {
+  transform: translateY(-1px);
+
+  background: var(--sb-lavender-strong);
+
+  box-shadow: 0 7px 16px rgba(109, 40, 217, 0.1);
+}
+
+
+/* Complete Request */
+
+.provider-complete-button {
+  background: #ecfdf3;
+
+  border: 1px solid #abefc6;
+
+  color: var(--sb-success);
+}
+
+.provider-complete-button:hover {
+  transform: translateY(-1px);
+
+  background: #d1fadf;
+
+  box-shadow: 0 7px 16px rgba(6, 118, 71, 0.1);
+}
+
+
+/* =========================================================
+   PROVIDER REQUEST MODAL
+========================================================= */
+
+.provider-request-modal-backdrop {
+  background: rgba(46, 16, 101, 0.45);
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* Modal */
+
+.provider-request-modal {
+  border: 1px solid var(--sb-border);
+
+  border-radius: var(--sb-radius);
+
+  background: var(--sb-surface);
+
+  box-shadow: 0 28px 75px rgba(46, 16, 101, 0.28);
+}
+
+
+/* Close Button */
+
+.provider-request-modal-close {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-color: var(--sb-border);
+
+  color: var(--sb-violet);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.provider-request-modal-close:hover {
+  transform: rotate(90deg);
+
+  background: var(--sb-lavender);
+}
+
+
+/* Modal Heading */
+
+.provider-request-modal > h2 {
+  color: var(--sb-violet);
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   REQUEST DETAILS GRID
+========================================================= */
+
+.provider-request-details-grid > div {
+  border-color: var(--sb-border);
+
+  background: #fcfbff;
+}
+
+.provider-request-details-grid span {
+  color: var(--sb-muted);
+}
+
+.provider-request-details-grid strong {
+  color: var(--sb-ink);
+}
+
+
+/* Detail Block */
+
+.provider-request-detail-block {
+  border-color: var(--sb-border);
+
+  background: #fcfbff;
+}
+
+.provider-request-detail-block > span {
+  color: var(--sb-muted);
+}
+
+.provider-request-detail-block p {
+  color: #475467;
+}
+
+
+/* =========================================================
+   CUSTOMER REQUEST DETAILS BUTTON
+========================================================= */
+
+.customer-request-details-button {
+  min-height: 42px;
+
+  border: 1px solid #ddd6fe;
+
+  border-radius: var(--sb-radius-sm);
+
+  background: var(--sb-lavender);
+
+  color: var(--sb-purple);
+
+  font-weight: 700;
+
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.05);
+}
+
+.customer-request-details-button:hover {
+  transform: translateY(-1px);
+
+  border-color: #c4b5fd;
+
+  background: var(--sb-lavender-strong);
+
+  box-shadow: 0 8px 18px rgba(109, 40, 217, 0.1);
+}
+
+
+/* =========================================================
+   SHARED CARD ANIMATION
+========================================================= */
+
+.service-card,
+.step-card,
+.category-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card {
+  will-change: transform;
+}
+
+
+/* =========================================================
+   BETTER BUTTON DISABLED STATES
+========================================================= */
+
+.provider-request-details-button:disabled,
+.provider-progress-button:disabled,
+.provider-complete-button:disabled,
+.customer-request-details-button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .provider-requests-header {
+    padding-bottom: 22px;
+  }
+
+  .provider-request-summary {
+    width: 100%;
+  }
+
+  .provider-request-card-footer {
+    gap: 10px;
+  }
+
+  .provider-request-details-button,
+  .provider-progress-button,
+  .provider-complete-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .provider-request-modal {
+    border-radius: 14px;
+  }
+
+  .provider-request-modal-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .provider-request-details-grid > div,
+  .provider-request-detail-block {
+    padding: 12px;
+  }
+
+}
+/* =========================================================
+   TASK 10 — PART 5
+   FINAL UI POLISH & PAGE CONSISTENCY
+   ========================================================= */
+
+
+/* =========================================================
+   SERVICES PAGE
+   ========================================================= */
+
+.services-page {
+  min-height: calc(100vh - 76px);
+  padding: 70px 24px;
+  background: var(--sb-page);
+}
+
+.services-container {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.services-header {
+  max-width: 760px;
+}
+
+.services-header h1 {
+  margin: 0;
+  color: var(--sb-violet);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.services-header p {
+  max-width: 650px;
+  margin-top: 16px;
+  color: var(--sb-muted);
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SERVICE SEARCH & FILTERS
+   ========================================================= */
+
+.services-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.6fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.services-search,
+.services-category-filter {
+  width: 100%;
+}
+
+.services-search input,
+.services-category-filter select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius-sm);
+  outline: none;
+  background: #ffffff;
+  color: var(--sb-ink);
+  font-size: 0.92rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.services-search input::placeholder {
+  color: #98a2b3;
+}
+
+.services-search input:focus,
+.services-category-filter select:focus {
+  border-color: var(--sb-purple);
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+}
+
+
+/* =========================================================
+   SERVICE GRID
+   ========================================================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.service-card-image-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 210px;
+  background: var(--sb-lavender);
+  color: var(--sb-purple);
+  font-weight: 800;
+}
+
+.service-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px;
+}
+
+.service-card-category {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--sb-lavender);
+  color: var(--sb-purple);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.service-card h2,
+.service-card h3 {
+  margin: 0;
+  color: var(--sb-violet);
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.service-card-description {
+  flex: 1;
+  margin: 12px 0 18px;
+  color: var(--sb-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.service-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 18px;
+  border-top: 1px solid var(--sb-border);
+}
+
+.service-price {
+  color: var(--sb-plum);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.service-provider {
+  margin-top: 12px;
+  color: #667085;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   SERVICE BUTTONS
+   ========================================================= */
+
+.service-view-button,
+.service-request-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: var(--sb-radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-request-button {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--sb-purple),
+    var(--sb-plum)
+  );
+  color: #ffffff;
+}
+
+.service-request-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(109, 40, 217, 0.2);
+}
+
+
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
+
+.profile-page {
+  min-height: calc(100vh - 76px);
+  padding: 70px 24px;
+  background: var(--sb-page);
+}
+
+.profile-container {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.profile-header {
+  max-width: 700px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+}
+
+.profile-header p {
+  margin-top: 14px;
+  color: var(--sb-muted);
+  line-height: 1.7;
+}
+
+.profile-card {
+  padding: 32px;
+}
+
+.profile-card h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.profile-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-field label {
+  color: #344054;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.profile-field input,
+.profile-field select,
+.profile-field textarea {
+  min-height: 48px;
+  padding: 12px 14px;
+}
+
+.profile-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.profile-field-full {
+  grid-column: 1 / -1;
+}
+
+.profile-save-button {
+  grid-column: 1 / -1;
+  width: fit-content;
+  min-height: 48px;
+  padding: 0 22px;
+  border: none;
+  border-radius: var(--sb-radius-sm);
+  background: linear-gradient(
+    135deg,
+    var(--sb-purple),
+    var(--sb-plum)
+  );
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile-save-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(109, 40, 217, 0.18);
+}
+
+
+/* =========================================================
+   NOTIFICATIONS PAGE
+   ========================================================= */
+
+.notifications-page {
+  min-height: calc(100vh - 76px);
+  padding: 70px 24px;
+  background: var(--sb-page);
+}
+
+.notifications-container {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.notifications-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.notifications-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.notifications-header p {
+  margin-top: 12px;
+  color: var(--sb-muted);
+}
+
+.notifications-list {
+  display: grid;
+  gap: 16px;
+}
+
+.notification-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.notification-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--sb-lavender);
+  color: var(--sb-purple);
+  font-weight: 800;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content h3 {
+  margin: 0 0 6px;
+  color: var(--sb-violet);
+  font-size: 0.95rem;
+}
+
+.notification-content p {
+  margin: 0;
+  color: var(--sb-muted);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.notification-time {
+  display: block;
+  margin-top: 9px;
+  color: #98a2b3;
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD POLISH
+   ========================================================= */
+
+.admin-dashboard {
+  padding: 7rem 1.5rem 4rem;
+  background: var(--sb-page);
+}
+
+.admin-dashboard-container {
+  width: min(1180px, 100%);
+}
+
+.admin-dashboard-header {
+  margin-bottom: 35px;
+}
+
+.admin-dashboard-header h1 {
+  color: var(--sb-violet);
+}
+
+.admin-dashboard-header p {
+  max-width: 680px;
+}
+
+
+/* Admin statistics */
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.admin-stat-card {
+  padding: 22px;
+}
+
+.admin-stat-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--sb-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-stat-card strong {
+  color: var(--sb-violet);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   GENERAL EMPTY STATES
+   ========================================================= */
+
+.services-empty,
+.notifications-empty,
+.profile-empty {
+  padding: 55px 25px;
+  border: 1px dashed var(--sb-border);
+  border-radius: var(--sb-radius);
+  background: #ffffff;
+  text-align: center;
+}
+
+.services-empty h2,
+.notifications-empty h2,
+.profile-empty h2 {
+  margin-bottom: 10px;
+}
+
+.services-empty p,
+.notifications-empty p,
+.profile-empty p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--sb-muted);
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE — PART 5
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .services-page,
+  .profile-page,
+  .notifications-page {
+    padding: 52px 14px;
+  }
+
+  .services-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    padding: 22px 18px;
+  }
+
+  .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-field-full,
+  .profile-save-button {
+    grid-column: auto;
+  }
+
+  .profile-save-button {
+    width: 100%;
+  }
+
+  .notifications-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-view-button,
+  .service-request-button {
+    width: 100%;
+  }
+
+  .notification-card {
+    padding: 17px;
+  }
+
+}
+/* =========================================================
+   TASK 10 — PART 6
+   FINAL PROFESSIONAL POLISH & MICRO-INTERACTIONS
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL BUTTON CONSISTENCY
+   ========================================================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.primary-button,
+.secondary-button,
+.dashboard-primary-button,
+.dashboard-services-button,
+.provider-services-button,
+.service-view-button,
+.service-request-button,
+.profile-save-button,
+.provider-create-service-button,
+.admin-approve-button,
+.admin-reject-button,
+.admin-deactivate-button,
+.provider-accept-button,
+.provider-reject-button,
+.provider-progress-button,
+.provider-complete-button,
+.customer-request-details-button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primary-button:active,
+.secondary-button:active,
+.dashboard-primary-button:active,
+.dashboard-services-button:active,
+.provider-services-button:active,
+.service-view-button:active,
+.service-request-button:active,
+.profile-save-button:active,
+.provider-create-service-button:active,
+.admin-approve-button:active,
+.admin-reject-button:active,
+.admin-deactivate-button:active,
+.provider-accept-button:active,
+.provider-reject-button:active,
+.provider-progress-button:active,
+.provider-complete-button:active,
+.customer-request-details-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   LINK INTERACTIONS
+   ========================================================= */
+
+a {
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.text-link,
+.category-link,
+.footer-column a {
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   CARD INTERACTION CONSISTENCY
+   ========================================================= */
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card,
+.profile-card,
+.provider-create-service,
+.provider-incoming-section,
+.provider-my-services-section {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-card:hover,
+.customer-request-card:hover,
+.provider-request-card:hover,
+.admin-provider-card:hover,
+.notification-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sb-shadow-hover);
+  border-color: #d8b4fe;
+}
+
+
+/* =========================================================
+   FORM FIELD POLISH
+   ========================================================= */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--sb-purple);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.request-status,
+.admin-provider-status,
+.status-pending,
+.status-accepted,
+.status-in-progress,
+.status-completed,
+.status-rejected {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 5px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PAGE HEADINGS
+   ========================================================= */
+
+.customer-dashboard-header,
+.provider-dashboard-header,
+.admin-dashboard-header,
+.services-header,
+.profile-header,
+.notifications-header,
+.provider-requests-header {
+  position: relative;
+}
+
+.customer-dashboard-header h1,
+.provider-dashboard-header h1,
+.admin-dashboard-header h1,
+.services-header h1,
+.profile-header h1,
+.notifications-header h1,
+.provider-requests-header h1 {
+  line-height: 1.12;
+}
+
+
+/* =========================================================
+   LOADING STATES
+   ========================================================= */
+
+.dashboard-loader,
+.services-spinner {
+  box-sizing: border-box;
+}
+
+.dashboard-state,
+.services-state {
+  animation: sb-fade-in 0.35s ease both;
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR / MESSAGE BOXES
+   ========================================================= */
+
+.admin-success-message,
+.profile-success,
+.provider-service-success,
+.login-error,
+.profile-error,
+.provider-service-error,
+.dashboard-error,
+.services-error {
+  border-width: 1px;
+  border-style: solid;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MODAL POLISH
+   ========================================================= */
+
+.provider-request-modal-close {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.provider-request-modal-close:hover {
+  transform: rotate(90deg);
+  background: var(--sb-lavender);
+  border-color: #c4b5fd;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(109, 40, 217, 0.3);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SCROLLBAR POLISH
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-purple) #f3f0f7;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f3f0f7;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 2px solid #f3f0f7;
+  border-radius: 999px;
+  background: var(--sb-purple);
+}
+
+
+/* =========================================================
+   SMOOTH PAGE ENTRY
+   ========================================================= */
+
+@keyframes sb-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-page,
+.customer-dashboard,
+.provider-dashboard,
+.admin-dashboard,
+.profile-page,
+.notifications-page,
+.provider-requests-page {
+  animation: sb-fade-in 0.35s ease both;
+}
+
+
+/* =========================================================
+   MOBILE POLISH
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .service-card,
+  .customer-request-card,
+  .provider-request-card,
+  .notification-card {
+    border-radius: 14px;
+  }
+
+  .customer-dashboard-header h1,
+  .provider-dashboard-header h1,
+  .admin-dashboard-header h1,
+  .services-header h1,
+  .profile-header h1,
+  .notifications-header h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
+
+  .provider-request-modal-close {
+    top: 10px;
+    right: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+/* =========================================================
+   TASK 10 — PART 7
+   FINAL UI CLEANUP & CROSS-PAGE CONSISTENCY
+   ========================================================= */
+
+
+/* =========================================================
+   CONSISTENT PAGE CONTAINERS
+   ========================================================= */
+
+.services-page,
+.customer-dashboard,
+.provider-dashboard,
+.admin-dashboard,
+.profile-page,
+.notifications-page,
+.provider-requests-page {
+  width: 100%;
+}
+
+.services-container,
+.customer-dashboard-container,
+.provider-dashboard-container,
+.admin-dashboard-container,
+.profile-container,
+.notifications-container,
+.provider-requests-container {
+  width: min(1180px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   CONSISTENT SECTION SPACING
+   ========================================================= */
+
+.services-page,
+.customer-dashboard,
+.provider-dashboard,
+.admin-dashboard,
+.profile-page,
+.notifications-page,
+.provider-requests-page {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER CONSISTENCY
+   ========================================================= */
+
+.customer-dashboard-header,
+.provider-dashboard-header,
+.admin-dashboard-header,
+.services-header,
+.profile-header,
+.notifications-header,
+.provider-requests-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.customer-dashboard-header p,
+.provider-dashboard-header p,
+.admin-dashboard-header p,
+.services-header p,
+.profile-header p,
+.notifications-header p,
+.provider-requests-header p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CARD CONTENT SPACING
+   ========================================================= */
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card,
+.profile-card,
+.professional-profile-card,
+.admin-request-card,
+.admin-message-card {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD ACTION BUTTON GROUPS
+   ========================================================= */
+
+.provider-request-actions,
+.admin-request-actions,
+.service-card-actions,
+.profile-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+/* =========================================================
+   SERVICE CARD CONSISTENCY
+   ========================================================= */
+
+.service-card {
+  height: 100%;
+}
+
+.service-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card-content > * {
+  flex-shrink: 0;
+}
+
+.service-card-actions {
+  margin-top: auto;
+}
+
+
+/* =========================================================
+   EMPTY STATE POLISH
+   ========================================================= */
+
+.dashboard-empty,
+.services-empty,
+.notifications-empty {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PROFILE PAGE FORM CONSISTENCY
+   ========================================================= */
+
+.profile-form,
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.profile-field,
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.profile-field label,
+.contact-form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #344054;
+}
+
+
+/* =========================================================
+   PROVIDER SERVICE FORM SPACING
+   ========================================================= */
+
+.provider-service-form {
+  align-items: start;
+}
+
+.provider-service-field input,
+.provider-service-field textarea,
+.provider-service-field select {
+  min-height: 48px;
+}
+
+.provider-service-field textarea {
+  min-height: 130px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD IMPROVEMENTS
+   ========================================================= */
+
+.notification-card {
+  position: relative;
+}
+
+.notification-card:not(:last-child) {
+  margin-bottom: 0.9rem;
+}
+
+
+/* =========================================================
+   ADMIN CARD ACTIONS
+   ========================================================= */
+
+.admin-provider-card button,
+.admin-request-card button,
+.admin-message-card button {
+  min-height: 44px;
+}
+
+
+/* =========================================================
+   BUTTON GROUP RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .services-page,
+  .customer-dashboard,
+  .provider-dashboard,
+  .admin-dashboard,
+  .profile-page,
+  .notifications-page,
+  .provider-requests-page {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .provider-request-actions,
+  .admin-request-actions,
+  .service-card-actions,
+  .profile-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .provider-request-actions button,
+  .admin-request-actions button,
+  .service-card-actions button,
+  .service-card-actions a,
+  .profile-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE SPACING
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .services-page,
+  .customer-dashboard,
+  .provider-dashboard,
+  .admin-dashboard,
+  .profile-page,
+  .notifications-page,
+  .provider-requests-page {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .customer-dashboard-header,
+  .provider-dashboard-header,
+  .admin-dashboard-header,
+  .services-header,
+  .profile-header,
+  .notifications-header,
+  .provider-requests-header {
+    padding-bottom: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .dashboard-empty,
+  .services-empty,
+  .notifications-empty {
+    min-height: 220px;
+    padding: 1.5rem 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL VISUAL CONSISTENCY
+   ========================================================= */
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--sb-border);
+}
+
+::selection {
+  background: rgba(109, 40, 217, 0.18);
+  color: var(--sb-violet);
+}
+/* =========================================================
+   TASK 10 — PART 8
+   FINAL RESPONSIVE, OVERFLOW & MOBILE POLISH
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL OVERFLOW PROTECTION
+   ========================================================= */
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   FLEX / GRID OVERFLOW PROTECTION
+   ========================================================= */
+
+.services-container,
+.customer-dashboard-container,
+.provider-dashboard-container,
+.admin-dashboard-container,
+.profile-container,
+.notifications-container,
+.provider-requests-container,
+.section,
+.navbar,
+.footer-container {
+  min-width: 0;
+}
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card,
+.profile-card,
+.professional-profile-card {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LONG TEXT PROTECTION
+   ========================================================= */
+
+.service-card h1,
+.service-card h2,
+.service-card h3,
+.customer-request-card h1,
+.customer-request-card h2,
+.customer-request-card h3,
+.provider-request-card h1,
+.provider-request-card h2,
+.provider-request-card h3,
+.admin-provider-card h1,
+.admin-provider-card h2,
+.admin-provider-card h3,
+.notification-card h1,
+.notification-card h2,
+.notification-card h3,
+.profile-card h1,
+.profile-card h2,
+.profile-card h3 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.service-card p,
+.customer-request-card p,
+.provider-request-card p,
+.admin-provider-card p,
+.notification-card p {
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   IMAGE RESPONSIVENESS
+   ========================================================= */
+
+.service-card img,
+.customer-request-image,
+.profile-avatar,
+.professional-profile-avatar {
+  display: block;
+  max-width: 100%;
+}
+
+.customer-request-image {
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   NAVIGATION MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    gap: 1rem;
+  }
+
+  .navbar-brand {
+    min-width: 0;
+  }
+
+  .navbar-brand span {
+    white-space: nowrap;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .site-header {
+    position: sticky;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar-links {
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
+  }
+
+  .nav-link,
+  .nav-cta,
+  .nav-logout {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+
+/* =========================================================
+   DASHBOARD RESPONSIVE ACTIONS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .customer-dashboard-header,
+  .provider-dashboard-header {
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .customer-dashboard-header,
+  .provider-dashboard-header,
+  .admin-dashboard-header {
+    gap: 1.25rem;
+  }
+
+  .dashboard-primary-button,
+  .dashboard-services-button,
+  .provider-services-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   CARD GRID RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .services-grid,
+  .steps-grid,
+  .categories-grid,
+  .admin-providers-grid {
+    gap: 1.25rem;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .steps-grid,
+  .categories-grid,
+  .services-grid,
+  .admin-providers-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   REQUEST CARD MOBILE POLISH
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .customer-request-card {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-request-content {
+    padding: 1.25rem;
+  }
+
+  .provider-request-card {
+    padding: 1.25rem;
+  }
+
+  .provider-request-top {
+    gap: 1rem;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .customer-request-content {
+    padding: 1rem;
+  }
+
+  .provider-request-card {
+    padding: 1rem;
+    border-radius: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   FORM RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .profile-form,
+  .contact-form,
+  .provider-service-form {
+    width: 100%;
+  }
+
+  .provider-service-field input,
+  .provider-service-field textarea,
+  .provider-service-field select,
+  .profile-field input,
+  .profile-field textarea,
+  .profile-field select,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   MODAL MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .provider-request-modal-backdrop {
+    padding: 12px;
+  }
+
+  .provider-request-modal {
+    width: 100%;
+    max-height: calc(100vh - 24px);
+  }
+
+}
+
+
+/* =========================================================
+   FOOTER RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .footer-container {
+    gap: 2rem;
+  }
+
+  .footer-column {
+    min-width: 0;
+  }
+
+  .footer-column a,
+  .footer-column span,
+  .footer-brand p {
+    overflow-wrap: anywhere;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE BUTTON POLISH
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .primary-button,
+  .secondary-button,
+  .dashboard-primary-button,
+  .dashboard-services-button,
+  .provider-services-button,
+  .provider-create-service-button,
+  .admin-approve-button,
+  .admin-reject-button,
+  .admin-deactivate-button,
+  .provider-accept-button,
+  .provider-reject-button,
+  .provider-progress-button,
+  .provider-complete-button,
+  .service-view-button,
+  .service-request-button {
+    min-height: 46px;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL TOUCH — TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+  .service-card:hover,
+  .customer-request-card:hover,
+  .provider-request-card:hover,
+  .admin-provider-card:hover,
+  .notification-card:hover {
+    transform: none;
+  }
+
+}
+/* =========================================================
+   TASK 10 — PART 9
+   FINAL DESIGN REFINEMENT & TYPOGRAPHY POLISH
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY CONSISTENCY
+   ========================================================= */
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+p {
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CONSISTENT TEXT COLORS
+   ========================================================= */
+
+.services-header p,
+.customer-dashboard-header p,
+.provider-dashboard-header p,
+.admin-dashboard-header p,
+.profile-header p,
+.notifications-header p,
+.provider-requests-header p,
+.section-heading p {
+  color: var(--sb-muted);
+}
+
+
+/* =========================================================
+   EYEBROW LABEL POLISH
+   ========================================================= */
+
+.eyebrow,
+.dashboard-eyebrow,
+.services-eyebrow,
+.login-eyebrow {
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   BETTER CARD CONTENT ALIGNMENT
+   ========================================================= */
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card,
+.profile-card,
+.professional-profile-card {
+  position: relative;
+}
+
+
+/* =========================================================
+   CARD BORDER CONSISTENCY
+   ========================================================= */
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card,
+.profile-card,
+.professional-profile-card,
+.provider-create-service,
+.provider-incoming-section,
+.provider-my-services-section {
+  border-color: var(--sb-border);
+}
+
+
+/* =========================================================
+   SERVICE CARD TEXT POLISH
+   ========================================================= */
+
+.service-card h2,
+.service-card h3 {
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+.service-card p {
+  color: var(--sb-muted);
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DASHBOARD CARD TEXT POLISH
+   ========================================================= */
+
+.customer-request-card h2,
+.provider-request-card h2,
+.admin-provider-card h2 {
+  line-height: 1.3;
+}
+
+.customer-request-card p,
+.provider-request-card p,
+.admin-provider-card p {
+  color: var(--sb-muted);
+}
+
+
+/* =========================================================
+   DIVIDER CONSISTENCY
+   ========================================================= */
+
+.customer-request-details,
+.provider-request-service-info,
+.provider-customer-info,
+.provider-request-card-footer {
+  border-color: var(--sb-border);
+}
+
+
+/* =========================================================
+   BUTTON TEXT ALIGNMENT
+   ========================================================= */
+
+button,
+.primary-button,
+.secondary-button,
+.dashboard-primary-button,
+.dashboard-services-button,
+.provider-services-button,
+.service-view-button,
+.service-request-button,
+.provider-create-service-button,
+.customer-request-details-button {
+  white-space: normal;
+}
+
+
+/* =========================================================
+   IMPROVED BUTTON DISABLED STATES
+   ========================================================= */
+
+button:disabled,
+.primary-button:disabled,
+.secondary-button:disabled,
+.dashboard-primary-button:disabled,
+.dashboard-services-button:disabled,
+.provider-services-button:disabled,
+.provider-create-service-button:disabled {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   FORM LABEL READABILITY
+   ========================================================= */
+
+.login-field label,
+.profile-field label,
+.provider-service-field label,
+.contact-form label {
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TEXTAREA READABILITY
+   ========================================================= */
+
+textarea {
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   IMPROVED TABLE READABILITY
+   ========================================================= */
+
+.admin-table-wrapper th,
+.table-responsive th {
+  white-space: nowrap;
+}
+
+.admin-table-wrapper td,
+.table-responsive td {
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   EMPTY STATE TYPOGRAPHY
+   ========================================================= */
+
+.dashboard-empty h2,
+.services-empty h2,
+.notifications-empty h2 {
+  line-height: 1.25;
+}
+
+.dashboard-empty p,
+.services-empty p,
+.notifications-empty p {
+  color: var(--sb-muted);
+}
+
+
+/* =========================================================
+   FOOTER TEXT CONSISTENCY
+   ========================================================= */
+
+.footer-brand > p,
+.footer-column a,
+.footer-column span,
+.footer-bottom p {
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE TYPOGRAPHY REFINEMENT
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  p {
+    line-height: 1.65;
+  }
+
+  .section-heading h2,
+  .customer-dashboard-header h1,
+  .provider-dashboard-header h1,
+  .admin-dashboard-header h1,
+  .services-header h1,
+  .profile-header h1,
+  .notifications-header h1,
+  .provider-requests-header h1 {
+    line-height: 1.15;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .navbar-brand {
+    font-size: 1.05rem;
+  }
+
+  .brand-mark {
+    width: 31px;
+    height: 31px;
+  }
+
+  .customer-dashboard,
+  .provider-dashboard,
+  .admin-dashboard,
+  .services-page,
+  .profile-page,
+  .notifications-page,
+  .provider-requests-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL UI SMOOTHNESS
+   ========================================================= */
+
+.service-card,
+.customer-request-card,
+.provider-request-card,
+.admin-provider-card,
+.notification-card {
+  will-change: transform;
+}
